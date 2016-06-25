@@ -1,5 +1,4 @@
 def run(command, pos,mov):
-
 	for l in command:
 		if(l == 'R'):
 			mov = turn(True,mov)
@@ -9,21 +8,15 @@ def run(command, pos,mov):
 			# print("lam", pos,mov)
 			pos = map(lambda a,b: a+b, pos,mov)
 			# print("lam", pos,mov)
-
 	# print("position after one run",pos)
-
 	return [pos,mov];
-	
 
 def turn(turnRight, mov):
-
 	up = [0,1]
 	down = [0,-1]
 	right = [1,0]
 	left = [-1,0]
-
 	# t = mov
-
 	if(turnRight):
 		if(mov == up):
 			mov = right
@@ -42,7 +35,6 @@ def turn(turnRight, mov):
 			mov = right
 		elif(mov == right):
 			mov = up
-
 	# print("turned","right" if turnRight else "left", t,"-->",mov)
 	return mov
 
@@ -53,8 +45,6 @@ def isCirle(command):
 		[pos,mov] = run(command,pos,mov)
 		if(pos == [0,0]):
 			return "YES"
-
 	return "NO"
 
-
-print(isCirle("GGRLLGRL"));
+print("Test case GGRLLGRL ",isCirle("GGRLLGRL"));
